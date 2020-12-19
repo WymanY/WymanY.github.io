@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://gitee.com/lowSilent/picBed/raw/master/Z.jpeg">
 <meta property="og:image" content="https://gitee.com/lowSilent/picBed/raw/master/19cc7c1efee54d5484d52599e1987595.png">
-<meta property="og:updated_time" content="2020-12-19T15:31:57.285Z">
+<meta property="og:updated_time" content="2020-12-19T15:47:54.399Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="VPS 搭建V2ray 部署相关">
 <meta name="twitter:description" content="买什么vps Hostwinds justMysocks vultr 阿里云香港">
@@ -228,21 +228,25 @@
 <h2 id="测试自己的翻墙服务"><a href="#测试自己的翻墙服务" class="headerlink" title="测试自己的翻墙服务"></a>测试自己的翻墙服务</h2><p>通过这个repo的脚本<a href="https://github.com/ernisn/superspeed" target="_blank" rel="noopener">https://github.com/ernisn/superspeed</a> 测试自己的翻墙服务。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash &lt;(curl -Lso- https://git.io/superspeed)</span><br></pre></td></tr></table></figure>
 
-<p>这个过程大概持续10分钟左右，就会测试完<br><img src="https://gitee.com/lowSilent/picBed/raw/master/19cc7c1efee54d5484d52599e1987595.png" alt="b0391fabf16c3b12453f0e29af4c909a.png"></p>
-<h2 id="如何对自己的单应用进行代理"><a href="#如何对自己的单应用进行代理" class="headerlink" title="如何对自己的单应用进行代理"></a>如何对自己的单应用进行代理</h2><p>常见的方式有三种</p>
-<ol>
-<li>使用proxifier工具 29.99$</li>
-<li>使用surge 工具 49.99$</li>
-<li>使用privoxy，需要自己配置，复杂一点。</li>
-</ol>
+<p>这个过程大概持续10分钟左右，就会测试完<br><img src="https://gitee.com/lowSilent/picBed/raw/master/19cc7c1efee54d5484d52599e1987595.png" alt="b0391fabf16c3b12453f0e29af4c909a.png" style="zoom:50%;"></p>
 <h2 id="使用什么类型的fq客户端"><a href="#使用什么类型的fq客户端" class="headerlink" title="使用什么类型的fq客户端"></a>使用什么类型的fq客户端</h2><p>常见的fq工具有如下几类：</p>
 <ul>
-<li>v2ray系列</li>
-<li>shadowssocks系列</li>
-<li>clash系列</li>
+<li>v2ray系列（开源</li>
+<li>shadowsocks系列（开源</li>
+<li>clash系列 (开源)</li>
 <li>surge</li>
 </ul>
-<h2 id="如何让自己的单应用翻墙"><a href="#如何让自己的单应用翻墙" class="headerlink" title="如何让自己的单应用翻墙"></a>如何让自己的单应用翻墙</h2><h2 id="如何进行避免DNS污染"><a href="#如何进行避免DNS污染" class="headerlink" title="如何进行避免DNS污染"></a>如何进行避免DNS污染</h2><p>自建DNS 域名服务器，可以有效的防止污染。</p>
+<h2 id="如何让自己的单应用翻墙"><a href="#如何让自己的单应用翻墙" class="headerlink" title="如何让自己的单应用翻墙"></a>如何让自己的单应用翻墙</h2><ol>
+<li>使用surge的增强模式 <strong>49.99</strong> &lt;推荐</li>
+<li>使用tun2socks配合v2rayU</li>
+<li>使用Proxifer配置规则翻墙 <strong>29.99$</strong></li>
+<li>使用开源工具<a href="https://github.com/mellow-io/mellow" target="_blank" rel="noopener">mellow</a>工具进行全局代理</li>
+<li>部署privoxy，全局针对域名进行翻墙。（比较复杂</li>
+</ol>
+<h2 id="如何进行避免DNS污染"><a href="#如何进行避免DNS污染" class="headerlink" title="如何进行避免DNS污染"></a>如何进行避免DNS污染</h2><p>自建DNS 域名服务器，可以有效的防止污染。</p>
+<p>1.<code>dnsmasq</code>+<code>coredns</code></p>
+<p>2.配置<code>v2ray</code>的dns模式进行国内外分流</p>
+<p>3.<code>adguard Home</code>docker部署dns分流</p>
 <hr>
 <p>参考链接：</p>
 <ul>
@@ -252,6 +256,7 @@
 <li>使用cloudfare 加速vps：<a href="http://blog.zhouzhaoping.com/Tools/circumvention_technology_cloudflare_v2ray/" target="_blank" rel="noopener">http://blog.zhouzhaoping.com/Tools/circumvention_technology_cloudflare_v2ray/</a></li>
 <li>加速vps参考：<a href="https://www.ectrv.com/?p=622" target="_blank" rel="noopener">https://www.ectrv.com/?p=622</a></li>
 <li>加速v2ray <a href="https://www.ectrv.com/?p=1476" target="_blank" rel="noopener">https://www.ectrv.com/?p=1476</a></li>
+<li>adguardHome自建防止dns污染：<a href="https://p3terx.com/archives/use-adguard-home-to-build-dns-to-prevent-pollution-and-remove-ads-1.html" target="_blank" rel="noopener">https://p3terx.com/archives/use-adguard-home-to-build-dns-to-prevent-pollution-and-remove-ads-1.html</a></li>
 </ul>
 
       
@@ -518,15 +523,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">lldb</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">iOS</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Debug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">lldb</a>
               </li>
              
               <li class="article-tag-list-item">
